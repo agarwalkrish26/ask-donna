@@ -1,0 +1,17 @@
+.hidden {
+    display: none;
+}
+
+.message {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.user-message {
+    background-color: #e3f2fd;
+}
+
+.assistant-message {
+    background-color: #f5f5f5;
+}

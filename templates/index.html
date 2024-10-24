@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto p-4">
+        <!-- Mode Selection -->
+        <div class="flex justify-center mb-4">
+            <button id="listeningModeBtn" class="px-4 py-2 mr-2 rounded bg-gray-200">
+                Listening Mode
+            </button>
+            <button id="conversationModeBtn" class="px-4 py-2 rounded bg-blue-500 text-white">
+                Conversation Mode
+            </button>
+        </div>
+
+        <!-- Listening Mode -->
+        <div id="listeningMode" class="mode-container hidden bg-white rounded-lg shadow p-6">
+            <button id="toggleListening" class="px-4 py-2 rounded bg-green-500 text-white mb-4">
+                Start Listening
+            </button>
+            <div id="listeningHistory" class="h-96 overflow-y-auto border rounded p-4"></div>
+        </div>
+
+        <!-- Conversation Mode -->
+        <div id="conversationMode" class="mode-container bg-white rounded-lg shadow p-6">
+            <div id="conversationHistory" class="h-96 overflow-y-auto border rounded p-4 mb-4"></div>
+            <form id="messageForm" class="flex">
+                <input type="text" id="messageInput" 
+                       class="flex-1 border rounded-l px-4 py-2" 
+                       placeholder="Type your message...">
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-r">
+                    Send
+                </button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
